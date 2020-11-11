@@ -1,0 +1,14 @@
+[package]
+authors = ["slinkardbrandon@gmail.com"]
+edition = "2018"
+name = "moleculer"
+version = "0.0.1"
+
+[features]
+default = ["nats"]
+
+# Using the nats transporter feature requires the nats crate
+transporter-nats = ["nats"]
+
+[dependencies]
+nats = {version = "0.8.3", optional = true}
