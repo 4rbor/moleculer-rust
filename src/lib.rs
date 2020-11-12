@@ -1,3 +1,5 @@
+use crate::transporters::main;
+
 mod transporters {
     pub mod main;
     pub mod nats;
@@ -21,6 +23,8 @@ impl ServiceBroker {
     pub fn start(&mut self) {
         println!("Starting service broker.");
         self.started = Some(true);
+
+        main::resolve(self.transporter.to_string());
     }
 
     pub fn stop(&mut self) {
